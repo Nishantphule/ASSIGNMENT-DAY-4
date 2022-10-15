@@ -12,17 +12,17 @@ xhr.onload = function () {
 
   if (xhr.status >= 200 && xhr.status < 300) {
 
-    var data = JSON.parse(xhr.response);
+    var data = JSON.parse(xhr.responseText);
 
-     data.forEach(element => {
-        console.log(`
+    data.forEach(element => {
+      console.log(`
         name: ${element.name.common}
         region: ${element.region}
         subregion: ${element.subregion}
         population: ${element.population}
   
         `);
-      }); 
+    });
   } else {
     console.log("Data is not available");
   }

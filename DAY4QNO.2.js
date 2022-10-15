@@ -10,11 +10,11 @@ xhr.send();
 
 xhr.onload = function () {
 
-    var data = JSON.parse(xhr.response);
-    for (var element of data) {
-      console.log(`
+  var data = JSON.parse(xhr.responseText);
+  for (var element of data) {
+    console.log(`
   ${element.flag}
     `);
-    }
+  }
 
 };
