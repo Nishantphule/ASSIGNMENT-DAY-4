@@ -15,6 +15,25 @@ xhr.onload = function () {
     var data = JSON.parse(xhr.responseText);
 
     data.forEach(element => {
+      
+      const createRow = document.createElement("tr")
+      const countryName = document.createElement("td")
+      countryName.innerHTML=element.name.common
+      
+      const countryRegion = document.createElement("td")
+      countryRegion.innerHTML=element.region
+      
+      const countrySubRegion = document.createElement("td")
+      countrySubRegion.innerHTML=element.subregion
+      
+      const countryPopulation = document.createElement("td")
+      countryPopulation.innerHTML=element.population
+      
+      createRow.append(countryName,countryRegion,countrySubRegion,countryPopulation)
+      
+      const bodyData = document.getElementById("data")
+      bodyData.append(createRow)
+      
       console.log(`
         name: ${element.name.common}
         region: ${element.region}
